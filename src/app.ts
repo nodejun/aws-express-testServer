@@ -44,4 +44,7 @@ const addCustomer = () => {
 const customer = await addCustomer();
 console.log(customer);
 
-app.listen(process.env.PORT, () => console.log("Server Started"));
+const PORT = Number(process.env.PORT) || 3000;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server Started on 0.0.0.0:${PORT}`);
+});
